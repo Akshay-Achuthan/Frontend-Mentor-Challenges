@@ -1,0 +1,60 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+.qrcode-container {
+  width: 250px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--primary-color);
+}
+
+.qrcode {
+  width: 260px;
+  height: 260px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.qr-header, .qr-para {
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+}
+
+.qr-header {
+  font-weight: 600px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: var(--dark-blue);
+}
+
+.qr-para {
+  font-size: 15px;
+  font-weight: 400px;
+  color: var(--dark-grey);
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-color: var(--secondary-color);
+  }
+}
+
+/*# sourceMappingURL=output.css.map */
