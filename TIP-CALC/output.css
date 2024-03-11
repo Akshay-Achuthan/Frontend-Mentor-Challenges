@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  background-color: hsl(185, 41%, 84%);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 50px;
+  height: 100vh;
+}
+
+.card {
+  width: 700px;
+  height: 400px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+}
+
+.card_left {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card_left .input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.card_left .input-container .error-msg-container {
+  display: flex;
+  justify-content: space-between;
+}
+.card_left .input-container .error-msg-bill, .card_left .input-container .error-msg-people {
+  display: none;
+  font-size: 12px;
+  color: red;
+  margin-left: 50px;
+}
+.card_left .input-container .txt-label {
+  color: hsl(184, 14%, 56%);
+  font-weight: 700;
+  font-size: 13px;
+  font-style: normal;
+}
+.card_left .input-container__common-input-style {
+  background-color: hsl(189, 41%, 97%);
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: hsl(183, 100%, 15%);
+  font-size: 16px;
+}
+.card_left .input-container__common-input-style:focus {
+  outline: none;
+  border: 2px solid hsl(172, 67%, 45%);
+}
+.card_left .input-container__common-input-style.error:focus {
+  outline: none;
+  border: 2px solid red;
+}
+.card_left .input-container__common-input-style::-webkit-inner-spin-button, .card_left .input-container__common-input-style::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.card_left .tip-container {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  grid-template-rows: auto auto;
+  gap: 10px;
+  margin-top: 10px;
+}
+.card_left .tip-container .tip {
+  cursor: pointer;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+.card_left .tip-container .tip:hover {
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+}
+.card_left .tip-container .tip.active-tip {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+.card_left .tip-container .tip-input {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(189, 41%, 97%);
+  letter-spacing: 1px;
+  text-align: center;
+  color: hsl(183, 100%, 15%);
+}
+.card_left .tip-container .tip-input::placeholder {
+  color: hsl(183, 100%, 15%);
+  font-weight: 700;
+}
+.card_left .tip-container .tip-input:focus {
+  outline: none;
+  border: 2px solid hsl(172, 67%, 45%);
+}
+
+.card_right {
+  background-color: hsl(183, 100%, 15%);
+  width: 50%;
+  padding: 50px 25px 25px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10%;
+  border-radius: 20px;
+  color: hsl(0, 0%, 100%);
+}
+.card_right .tip-main__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 45px;
+  margin-bottom: 15px;
+}
+.card_right .tip-main .tip-label-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 1.6px;
+  font-size: 14px;
+  gap: 5px;
+}
+.card_right .tip-main .tip-label-container__tip-txt {
+  color: hsl(184, 14%, 56%);
+  font-size: 12px;
+}
+.card_right .tip-main .tip-total-container__tip-amt, .card_right .tip-main .tip-total-container__tip-person {
+  color: hsl(172, 67%, 45%);
+  font-size: 35px;
+}
+
+.btn-container {
+  width: 100%;
+}
+.btn-container__reset-btn {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  width: 100%;
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: hsl(172, 67%, 45%);
+}
+.btn-container__reset-btn:hover {
+  background-color: hsl(185, 41%, 84%);
+}
+.btn-container__reset-btn:disabled {
+  cursor: not-allowed;
+  background-color: hsl(184, 14%, 56%);
+}
+
+/*# sourceMappingURL=output.css.map */
