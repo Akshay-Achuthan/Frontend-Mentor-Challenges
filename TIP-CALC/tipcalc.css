@@ -73,6 +73,9 @@ main{
   padding: 10px 5px;
   border-radius: 5px;
   border: none;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: var(--dark-cyan);
   font-size: 16px;
 }
 
@@ -167,6 +170,7 @@ main{
 .tip-label-container{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   letter-spacing: 1.6px;
   font-size: 14px;
   gap: 5px;
