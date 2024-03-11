@@ -23,6 +23,8 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  row-gap: 50px;
   height: 100vh;
 }
 
@@ -163,6 +165,7 @@ main{
 
 .tip-main-container{
   display: flex;
+  justify-content: space-between;
   gap:45px;
   margin-bottom: 15px;
 }

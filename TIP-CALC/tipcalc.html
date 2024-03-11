@@ -14,8 +14,8 @@
 </head>
 <body>
   <main>
+    <img src="./images/logo.svg" alt="">
     <section class="card">
-      
       <section class="card_left">
         
         <div class="input-container">
@@ -25,11 +25,11 @@
 
         <h5>Select Tip %</h5>
         <div class="tip-container">
-          <button class="tip">5%</button>
-          <button class="tip">10%</button>
-          <button class="tip active-tip">15%</button>
-          <button class="tip">25%</button>
-          <button class="tip">50%</button>
+          <button class="tip" value="5">5%</button>
+          <button class="tip" value="10">10%</button>
+          <button class="tip active-tip" value="15">15%</button>
+          <button class="tip" value="25">25%</button>
+          <button class="tip" value="50">50%</button>
           <input class="tip-input" placeholder="Custom"/>
         </div>
 
@@ -58,7 +58,7 @@
       
       <div class="tip-main-container">
         <div class="tip-label-container">
-          <label class="tip-amt-text">Tip Amount</label>
+          <label class="tip-amt-text">Total</label>
           <label class="tip-txt">/ person</label>
         </div>
         
@@ -74,5 +74,6 @@
       </section>
     </section>
   </main>
+  <script src="./tipcalc.js"></script>
 </body>
 </html>
