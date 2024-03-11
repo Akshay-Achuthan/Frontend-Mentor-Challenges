@@ -42,12 +42,15 @@ function selectedTip(event){
     el.addEventListener("click",selectedTip);
     el.classList.remove('active-tip');
   })
-  
-  event.target.classList.add('active-tip');
-  
-  if(tipSelectedByUser !== 0 && event){
-    console.log(event)
+
+  if(event){
+    event.target.classList.add('active-tip');
     tipSelectedByUser = Number(event.target.value);
+    if(billAmt && totalPerson && (tipSelectedByUser || customTip)){
+      resetBtn.removeAttribute('disabled');
+    }else{
+      resetBtn.setAttribute('disabled');
+    }
     calculateTip(billAmt,totalPerson,tipSelectedByUser);
   }else{
     calculateTip(billAmt,totalPerson,customTip);
@@ -101,4 +104,5 @@ function resetValues(){
   noOfPeople.value="";
   tipAmt.innerText="$0.00";
   tipTotal.innerText="$0.00";
+  resetBtn.setAttribute('disabled','disabled');
 }
