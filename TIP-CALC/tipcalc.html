@@ -19,7 +19,10 @@
       <section class="card_left">
         
         <div class="input-container">
-          <label for="bill-input">Bill</label>
+          <div class="error-msg-container">
+            <label for="bill-input">Bill</label>
+            <span class="error-msg-bill"></span>
+          </div>
           <input class="common-input-style bill-input" type="number" dir="rtl"/>
         </div>
 
@@ -34,9 +37,9 @@
         </div>
 
         <div class="input-container">
-          <div>
+          <div class="error-msg-container">
             <label for="people-input">Number of people</label>
-            <!-- <span class="error-msg">Can't be zero</span> -->
+            <span class="error-msg-people"></span>
           </div>
           <input class="common-input-style people-input" type="number" dir="rtl"/>
         </div>

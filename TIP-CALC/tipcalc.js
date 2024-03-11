@@ -4,19 +4,30 @@ const tip = Array.from(document.querySelectorAll(".tip"));
 const tipAmt = document.querySelector(".tip-amt");
 const tipTotal = document.querySelector(".tip-person");
 const resetBtn = document.querySelector(".reset-btn");
+const tipInput = document.querySelector(".tip-input");
+var errorBill = document.querySelector('.error-msg-bill');
+var errorPeople = document.querySelector('.error-msg-people');
 
 let tipSelectedByUser;
 let tipAmountPerPerson;
 let totalAmountPerPerson;
 let billAmt;
 let totalPerson;
+let customTip;
 
-billInput.addEventListener("input", () => {
+billInput.addEventListener("blur", () => {
   billAmt = Number(billInput.value);
+  inputValidation("bill");
 })
 
-noOfPeople.addEventListener("input", () => {
+noOfPeople.addEventListener("blur", () => {
   totalPerson = Number(noOfPeople.value);
+  inputValidation("person");
+})
+
+tipInput.addEventListener("blur", () => {
+  customTip = Number(tipInput.value);
+  selectedTip();
 })
 
 tip.map(el => {
@@ -26,9 +37,43 @@ tip.map(el => {
 resetBtn.addEventListener("click", resetValues);
 
 function selectedTip(event){
-  tipSelectedByUser = Number(event.target.value);
-  calculateTip(billAmt,totalPerson,tipSelectedByUser);
+  if(tipSelectedByUser !== 0 && event){
+    tipSelectedByUser = Number(event.target.value);
+    calculateTip(billAmt,totalPerson,tipSelectedByUser);
+  }else{
+    calculateTip(billAmt,totalPerson,customTip);
+  }
 };
+
+function inputValidation(val){
+  if(val === "bill"){
+    if(billInput.value === ""){
+      errorBill.innerText = "Can't be empty"
+      errorBill.style.display = "flex";
+      billInput.style.border = "2px solid var(--red)"
+    } else if(billAmt === 0){
+      errorBill.innerText = "Can't be zero"
+      errorBill.style.display = "flex";
+      billInput.style.border = "2px solid var(--red)"
+    }else{
+      errorBill.style.display = "none";
+      billInput.style.border = "2px solid var(--cyan-strong)"
+    }
+  }else{
+    if(noOfPeople.value === ""){
+      errorPeople.innerText = "Can't be empty"
+      errorPeople.style.display = "flex";
+      noOfPeople.style.border = "2px solid var(--red)"
+    } else if(totalPerson === 0){
+      errorPeople.innerText = "Can't be zero"
+      errorPeople.style.display = "flex";
+      noOfPeople.style.border = "2px solid var(--red)"
+    }else{
+      errorPeople.style.display = "none";
+      noOfPeople.style.border = "2px solid var(--cyan-strong)"
+    }
+  }
+}
 
 function calculateTip(billAmt,nop,tip){
   // console.log(billAmt,nop,tip);
