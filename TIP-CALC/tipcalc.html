@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator</title>
+  <!-- font styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+
+  <!-- css -->
+  <link rel="stylesheet" href="./tipcalc.css">
+</head>
+<body>
+  <main>
+    <section class="card">
+      
+      <section class="card_left">
+        
+        <div class="input-container">
+          <label for="bill-input">Bill</label>
+          <input class="common-input-style bill-input" type="number" dir="rtl"/>
+        </div>
+
+        <h5>Select Tip %</h5>
+        <div class="tip-container">
+          <button class="tip">5%</button>
+          <button class="tip">10%</button>
+          <button class="tip active-tip">15%</button>
+          <button class="tip">25%</button>
+          <button class="tip">50%</button>
+          <input class="tip-input" placeholder="Custom"/>
+        </div>
+
+        <div class="input-container">
+          <label for="people-input">Number of people</label>
+          <input class="common-input-style people-input" type="number" dir="rtl"/>
+        </div>
+      </section>
+
+      <section class="card_right">
+      
+      <div class="tip-main">
+        <div class="tip-main-container">
+          <div class="tip-label-container">
+            <label class="tip-amt-text">Tip Amount</label>
+            <label class="tip-txt">/ person</label>
+          </div>
+          
+        <div class="tip-total-container">
+          <span class="tip-amt">$0.00</span>
+        </div>
+      </div>  
+      
+      <div class="tip-main-container">
+        <div class="tip-label-container">
+          <label class="tip-amt-text">Tip Amount</label>
+          <label class="tip-txt">/ person</label>
+        </div>
+        
+        <div class="tip-total-container">
+          <span class="tip-person">$0.00</span>
+        </div>
+      </div>
+    </div>  
+
+      <div class="btn-container">
+        <button class="reset-btn">RESET</button>
+      </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
