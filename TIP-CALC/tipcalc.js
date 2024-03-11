@@ -37,7 +37,16 @@ tip.map(el => {
 resetBtn.addEventListener("click", resetValues);
 
 function selectedTip(event){
+  
+  tip.map(el => {
+    el.addEventListener("click",selectedTip);
+    el.classList.remove('active-tip');
+  })
+  
+  event.target.classList.add('active-tip');
+  
   if(tipSelectedByUser !== 0 && event){
+    console.log(event)
     tipSelectedByUser = Number(event.target.value);
     calculateTip(billAmt,totalPerson,tipSelectedByUser);
   }else{
