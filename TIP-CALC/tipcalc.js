@@ -5,15 +5,18 @@ const tipAmt = document.querySelector(".tip-amt");
 const tipTotal = document.querySelector(".tip-person");
 const resetBtn = document.querySelector(".reset-btn");
 const tipInput = document.querySelector(".tip-input");
-var errorBill = document.querySelector('.error-msg-bill');
-var errorPeople = document.querySelector('.error-msg-people');
+const errorBill = document.querySelector('.error-msg-bill');
+const errorPeople = document.querySelector('.error-msg-people');
 
+// Reused variables
 let tipSelectedByUser;
 let tipAmountPerPerson;
 let totalAmountPerPerson;
 let billAmt;
 let totalPerson;
 let customTip;
+
+// event handlers
 
 billInput.addEventListener("blur", () => {
   billAmt = Number(billInput.value);
@@ -36,13 +39,12 @@ tip.map(el => {
 
 resetBtn.addEventListener("click", resetValues);
 
+// methods
 function selectedTip(event){
-  
   tip.map(el => {
     el.addEventListener("click",selectedTip);
     el.classList.remove('active-tip');
   })
-
   if(event){
     event.target.classList.add('active-tip');
     tipSelectedByUser = Number(event.target.value);
@@ -88,12 +90,9 @@ function inputValidation(val){
 }
 
 function calculateTip(billAmt,nop,tip){
-  // console.log(billAmt,nop,tip);
-
   // per person tip amount calc
   tipAmountPerPerson = (((billAmt * tip ) / 100) / nop);
   tipAmt.innerText = "$" + tipAmountPerPerson.toFixed(2);
-  
   // per person total amount calc
   totalAmountPerPerson = (billAmt/nop) + tipAmountPerPerson;
   tipTotal.innerText = "$" + totalAmountPerPerson.toFixed(2);
@@ -104,5 +103,5 @@ function resetValues(){
   noOfPeople.value="";
   tipAmt.innerText="$0.00";
   tipTotal.innerText="$0.00";
-  resetBtn.setAttribute('disabled','disabled');
+  resetBtn.disabled = true;
 }
